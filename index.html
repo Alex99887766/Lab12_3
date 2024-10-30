@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ПП-21 Гнатецький Лабораторна робота 12.3</title>
+</head>	 
+<body>
+<script>  
+"use strict";
+
+document.write("<h2 style='text-align:center'>Лабораторна робота 12.3</h2>");
+
+let age = parseInt(prompt("Введіть ваш вік"), 10);
+let suffix;
+
+if (isNaN(age) || age <= 0) {
+    document.write("<p style='color:red'>Помилка: Введіть коректний вік!</p>");
+} else {
+    let b = age % 10;
+    switch (true) {
+        case (age > 10 && age < 20):
+            suffix = "років";
+            break;
+        case (b === 1):
+            suffix = "рік";
+            break;
+        case (b >= 2 && b <= 4):
+            suffix = "роки";
+            break;
+        default:
+            suffix = "років";
+            break;
+    }
+
+    let ageGroup;
+    switch (true) {
+        case (age >= 0 && age <= 12):
+            ageGroup = "дитина";
+            break;
+        case (age >= 13 && age <= 17):
+            ageGroup = "підліток";
+            break;
+        case (age >= 18 && age <= 64):
+            ageGroup = "дорослий";
+            break;
+        case (age >= 65):
+            ageGroup = "старий";
+            break;
+        default:
+            ageGroup = "невідомий вік";
+            break;
+    }
+
+    document.write(`<p>Вам - ${age} ${suffix}. Ви належите до вікової групи: ${ageGroup}.</p>`);
+}
+
+
+</script>
+</body>
+</html>
+
